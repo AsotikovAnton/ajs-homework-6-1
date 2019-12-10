@@ -14,21 +14,17 @@ test('Удачное создание зомби по имени Шон', () => 
 });
 
 test('Имя не является строкой', () => {
-  const recieved = new Character(7, 'Daemon');
-  expect(recieved).toThrow();
+  expect(() => new Character(7, 'Daemon')).toThrow();
 });
 
 test('Слишком короткое имя', () => {
-  const recieved = new Character('A', 'Swordsman');
-  expect(recieved).toThrow();
+  expect(() => new Character('A', 'Swordsman')).toThrow();
 });
 
 test('Слишком длинное имя', () => {
-  const recieved = new Character('Legolas Greenleaf', 'Bowman');
-  expect(recieved).toThrow();
+  expect(() => new Character('Legolas Greenleaf', 'Bowman')).toThrow();
 });
 
 test('Неверный тип персонажа', () => {
-  const recieved = new Character('Gimli', 'Dwarf');
-  expect(recieved).toThrow();
+  expect(() => new Character('Gimli', 'Dwarf')).toThrow();
 });
